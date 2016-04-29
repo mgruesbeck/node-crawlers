@@ -8,9 +8,7 @@ app.get('/scrape', function(req, res){
     //could increment on ID to pull more movies
     var url = 'http://www.imdb.com/title/tt1229340/';
 
-    res.send('check your terminal');
-
-    request(url, function(err, res, html){
+    request(url, function(err, response, html){
         if(!err){
             var $ = cheerio.load(html);
             var title, release, rating;
@@ -38,6 +36,8 @@ app.get('/scrape', function(req, res){
         fs.writeFile('imdbOut.json', JSON.stringify(json, null, 4), function(err){
             console.log('data written to imdbOut.json');
         });
+
+        res.send('check your terminal');
 
     });
 });
