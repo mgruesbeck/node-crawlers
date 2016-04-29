@@ -1,12 +1,12 @@
 {
   "name": "crawler",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "experimenting with node web crawlers",
+  "main": "imdb.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Melvin Gruesbeck",
   "license": "ISC",
   "devDependencies": {
     "cheerio": "^0.20.0",
