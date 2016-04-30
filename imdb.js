@@ -10,14 +10,14 @@ app.get('/scrape', function(req, res){
 
     request(url, function(err, response, html){
         if(!err){
-            var $ = cheerio.load(html);
+            var $ = cheerio.load(html, {normalizeWhitespace: true});
             var title, release, rating;
-            var json = {title : "", release : "", rating : ""};
+            var json = {title : '', release : '', rating : ''};
             
             $('.title_wrapper').filter(function(){
                 var data = $(this);
                 title = data.children().first().text();
-                json.title = title;
+                json.title = title.trim();
             });
 
             $('.titleYear').filter(function(){
